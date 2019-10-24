@@ -2,14 +2,58 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class Login extends AppCompatActivity {
+
+    EditText password;
+    EditText email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        email = findViewById(R.id.txtemail);
+        password = findViewById(R.id.txtpassword);
+    }
+
+    public void onClickSignIn(View v){
+        String passText = password.getText().toString();
+        String emailText = email.getText().toString();
+        boolean isError= false;
+
+        if(emailText != null && emailText.equalsIgnoreCase("")){
+            email.setError("Please enter Valid email");
+            isError = true;
+        }else if(!emailText.contains("@")){
+            email.setError("Please enter Valid email, @ is missing");
+            isError = true;
+        }else if(!emailText.contains(".com")){
+            email.setError("Please enter Valid email, .com is missing");
+            isError = true;
+        }
+
+        if(passText != null && passText.equalsIgnoreCase("")){
+            password.setError("Please enter Valid Password");
+            isError = true;
+        }else if(passText.length() < 5 || passText.length() > 8){
+            password.setError("Password lenght should be between 5-8 characters");
+            isError = true;
+        }
+
+        if(!isError){
+            Intent intent = new Intent(this, BeautyAndBeast.class);
+            startActivity(intent);
+        }
+    }
+
+    public void onClickSignUp(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
