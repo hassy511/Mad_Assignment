@@ -106,7 +106,7 @@
                 android:textAllCaps="true" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/txtFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -123,7 +123,7 @@
                 android:textAllCaps="true" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/txtLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -140,7 +140,7 @@
                 android:textAllCaps="true" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/txtGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -157,26 +157,58 @@
                 android:textAllCaps="true" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/txtCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="20dp" />
 
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="email"
+                android:textAllCaps="true" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="password"
+                android:textAllCaps="true" />
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/chkAgreement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:checked="true"
+                android:checked="false"
                 android:text="I consent, to the processing of my personal data in accordance with the Vistajet Privacy Policy, and to the Vistajet Direct Program Terms and Conditions of Use"
                 android:textColor="#5F5D5D" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnNext"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="10dp"
                 android:background="#F44336"
                 android:text="Next"
