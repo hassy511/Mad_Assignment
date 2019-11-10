@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlaceView"></activity>
-        <activity android:name=".BeautyAndBeast" />
-        <activity android:name=".Home">
+        <activity android:name=".rcvActivity">
+
         </activity>
+        <activity android:name=".FrgActivity">
+
+        </activity>
+        <activity android:name=".PlaceView" />
+        <activity android:name=".BeautyAndBeast" />
+        <activity android:name=".Home" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

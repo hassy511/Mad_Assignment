@@ -56,4 +56,9 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void onClickTerms(View v){
+        Intent intent = new Intent(this, FrgActivity.class);
+        startActivity(intent);
+    }
 }
