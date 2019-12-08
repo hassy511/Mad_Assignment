@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
     EditText password;
     EditText email;
-
+    DatabaseHandler db = new DatabaseHandler(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +48,13 @@ public class Login extends AppCompatActivity {
         }
 
         if(!isError){
-            Intent intent = new Intent(this, BeautyAndBeast.class);
-            startActivity(intent);
+            if(db.validateUser(emailText,passText)==1){
+                Intent intent = new Intent(this, BeautyAndBeast.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this,"Email or Password is Invalid",Toast.LENGTH_LONG).show();
+            }
         }
     }
 

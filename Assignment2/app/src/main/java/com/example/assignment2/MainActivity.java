@@ -19,11 +19,12 @@ public class MainActivity extends AppCompatActivity {
     EditText email;
     EditText password;
     CheckBox chkAgreement;
-
+    DatabaseHandler db = new DatabaseHandler(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         firstName = findViewById(R.id.txtFirstName);
         lastName = findViewById(R.id.txtLastName);
@@ -90,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if(!isError){
-                Intent intent = new Intent(this, PlaceView.class);
+                db.addUser(new User(emailText,passwordText));
+
+                Intent intent = new Intent(this, Login.class);
                 startActivity(intent);
             }
 
