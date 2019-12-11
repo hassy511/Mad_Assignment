@@ -80,6 +80,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         KEY_EMAIL, KEY_PASSWORD }, KEY_EMAIL + "=?",
                 new String[] { String.valueOf(email) }, null, null, null, null);
         String TempPassword = "";
+
         while (cursor.moveToNext()) {
 
             if (cursor.isFirst()) {
@@ -89,12 +90,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 // Storing Password associated with entered email.
                 TempPassword = cursor.getString(cursor.getColumnIndex(KEY_PASSWORD));
 
-                // Closing cursor.
-                cursor.close();
+
             }
         }
 
-        if (cursor != null && TempPassword == password){
+        // Closing cursor.
+        cursor.close();
+
+        if (cursor != null && TempPassword.equals(password)){
             return 1;
         }
         //    cursor.moveToFirst();
