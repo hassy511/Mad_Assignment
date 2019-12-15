@@ -17,10 +17,10 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(Splash.this, Login.class);
+                Intent i = new Intent(Splash.this, IntroActivity.class);
                 startActivity(i);
                 finish();
             }
-        }, 5000);
+        }, 2000);
     }
 }

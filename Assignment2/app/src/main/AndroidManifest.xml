@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.assignment2">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:name=".IntroApp"
         android:allowBackup="true"
@@ -10,14 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Welcome">
 
-
-        </activity>
-        <activity android:name=".WelcomeScreen">
-
-
-        </activity>
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
@@ -27,21 +22,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IntroActivity"/>
         <activity android:name=".rcvActivity" />
         <activity android:name=".FrgActivity" />
         <activity android:name=".PlaceView" />
         <activity android:name=".BeautyAndBeast" />
         <activity android:name=".Home" />
-        <activity android:name=".Login"
-        android:label="@string/title_activity_welcome"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Welcome" />
+        <activity android:name=".WelcomeScreen" />
     </application>
 
 </manifest>
